@@ -92,7 +92,9 @@ class TableViewController: UITableViewController, CLLocationManagerDelegate {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toMap" {
+            guard let nextVC = segue.destination as? MapViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
+            nextVC.restaurant = restaurants[indexPath.row]
+        }
     }
 }

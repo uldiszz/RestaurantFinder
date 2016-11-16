@@ -15,6 +15,7 @@
 		283311401DDCC2DA00889058 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2833113F1DDCC2DA00889058 /* TableViewController.swift */; };
 		283311431DDCC36B00889058 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283311421DDCC36B00889058 /* LocationController.swift */; };
 		283311451DDCC4BF00889058 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283311441DDCC4BF00889058 /* Restaurant.swift */; };
+		283311471DDCD19B00889058 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283311461DDCD19B00889058 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		2833113F1DDCC2DA00889058 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		283311421DDCC36B00889058 /* LocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		283311441DDCC4BF00889058 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		283311461DDCD19B00889058 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				283311421DDCC36B00889058 /* LocationController.swift */,
 				283311441DDCC4BF00889058 /* Restaurant.swift */,
 				2833113F1DDCC2DA00889058 /* TableViewController.swift */,
+				283311461DDCD19B00889058 /* MapViewController.swift */,
 				2833112E1DDCC22200889058 /* Main.storyboard */,
 				283311311DDCC22200889058 /* Assets.xcassets */,
 				283311331DDCC22200889058 /* LaunchScreen.storyboard */,
@@ -163,6 +166,7 @@
 				283311451DDCC4BF00889058 /* Restaurant.swift in Sources */,
 				2833112B1DDCC22200889058 /* AppDelegate.swift in Sources */,
 				283311431DDCC36B00889058 /* LocationController.swift in Sources */,
+				283311471DDCD19B00889058 /* MapViewController.swift in Sources */,
 				283311401DDCC2DA00889058 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

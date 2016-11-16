@@ -51,14 +51,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 
         let directions = MKDirections(request: request)
         directions.calculate { (response, error) in
-            guard let response = response else { return }
-            if error != nil {
-                for route in response.routes {
-                    let route = route as MKRoute
-                    self.mapView.add(route.polyline, level: .aboveRoads)
-                }
-            } else {
-                NSLog("Error calculating directions: \(error)")
+            guard let routes = response?.routes else { NSLog("\n No routes for directions received: \(response). \n Error: \(error?.localizedDescription)"); return }
+
+            for route in routes {
+                let route = route as MKRoute
+                self.mapView.add(route.polyline, level: .aboveRoads)
             }
         }
     }

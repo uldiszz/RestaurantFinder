@@ -14,6 +14,7 @@ class TableViewController: UITableViewController, CLLocationManagerDelegate {
 
     let locManager = LocationController.sharedInstance.locationManager
     var restaurants: [Restaurant] = []
+    var currentPlacemark: CLPlacemark?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +36,12 @@ class TableViewController: UITableViewController, CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        CLGeocoder().reverseGeocodeLocation(locations.last!, completionHandler: { (placemark, error) in
+        guard let location = locations.last else { return }
+        CLGeocoder().reverseGeocodeLocation(location, completionHandler: { (placemark, error) in
             guard let placemark = placemark?.last, let title = placemark.postalCode else { return }
             DispatchQueue.main.async {
                 self.title = "\(title)"
+                self.currentPlacemark = placemark
             }
         })
     }
@@ -93,8 +96,11 @@ class TableViewController: UITableViewController, CLLocationManagerDelegate {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toMap" {
-            guard let nextVC = segue.destination as? MapViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
+            guard let nextVC = segue.destination as? MapViewController,
+                 let indexPath = tableView.indexPathForSelectedRow,
+                 let current = self.currentPlacemark else { return }
             nextVC.restaurant = restaurants[indexPath.row]
+            nextVC.currentPlacemark = current
         }
     }
 }
